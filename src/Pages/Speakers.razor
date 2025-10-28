@@ -1,0 +1,97 @@
+@page "/speakers"
+@using TechoramaNL2025.Models
+@inject HttpClient Http
+
+<PageTitle>Speakers - Techorama NL 2025</PageTitle>
+
+<div class="speakers-container">
+    <div class="speakers-header">
+        <h1>Speakers</h1>
+        <p>Meet our amazing speakers for Techorama NL 2025</p>
+    </div>
+
+    @if (speakers == null)
+    {
+        <div class="loading-container">
+            <div class="loading-spinner"></div>
+            <p><em>Loading speakers...</em></p>
+        </div>
+    }
+    else if (error != null)
+    {
+        <div class="error-container">
+            <p class="error-message">⚠️ @error</p>
+        </div>
+    }
+    else if (speakers.Length == 0)
+    {
+        <div class="no-data-container">
+            <p>No speakers found.</p>
+        </div>
+    }
+    else
+    {
+        <div class="speakers-grid">
+            @foreach (var speaker in speakers)
+            {
+                <div class="speaker-card">
+                    <div class="speaker-image-container">
+                        <img src="@speaker.ImageUrl" alt="@speaker.Name" class="speaker-image" />
+                    </div>
+                    <div class="speaker-content">
+                        <h2 class="speaker-name">@speaker.Name</h2>
+                        <p class="speaker-company">@speaker.Company</p>
+                        <p class="speaker-bio">@speaker.Bio</p>
+                        
+                        @if (speaker.Sessions != null && speaker.Sessions.Count > 0)
+                        {
+                            <div class="speaker-sessions">
+                                <h3>Sessions</h3>
+                                @foreach (var session in speaker.Sessions)
+                                {
+                                    <div class="session-card">
+                                        <h4 class="session-title">@session.Title</h4>
+                                        <p class="session-description">@session.Description</p>
+                                        <div class="session-meta">
+                                            <span class="session-track">📍 @session.Track</span>
+                                            @if (!string.IsNullOrEmpty(session.StartTime))
+                                            {
+                                                <span class="session-time">🕒 @session.StartTime - @session.EndTime</span>
+                                            }
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>
+
+@code {
+    private Speaker[]? speakers;
+    private string? error;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            // Try to fetch from API endpoint first
+            speakers = await Http.GetFromJsonAsync<Speaker[]>("http://gerald.fyi/server-speaker");
+        }
+        catch
+        {
+            try
+            {
+                // Fallback to local sample data for development
+                speakers = await Http.GetFromJsonAsync<Speaker[]>("sample-data/speakers.json");
+            }
+            catch (Exception ex)
+            {
+                error = $"Unable to load speakers: {ex.Message}";
+            }
+        }
+    }
+}
