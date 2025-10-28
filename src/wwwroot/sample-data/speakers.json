@@ -1,0 +1,128 @@
+[
+  {
+    "id": 1,
+    "name": "John Smith",
+    "company": "Microsoft",
+    "bio": "John is a principal software engineer at Microsoft with over 15 years of experience in building scalable cloud applications. He specializes in .NET and Azure technologies.",
+    "imageUrl": "https://via.placeholder.com/300x300/FFD700/000000?text=JS",
+    "sessions": [
+      {
+        "id": 101,
+        "title": "Building Modern Web Apps with Blazor",
+        "description": "Learn how to build interactive web applications using Blazor WebAssembly and .NET 9",
+        "track": "Web Development",
+        "startTime": "09:00",
+        "endTime": "10:30"
+      },
+      {
+        "id": 102,
+        "title": "Advanced C# Patterns",
+        "description": "Deep dive into advanced C# patterns and best practices",
+        "track": "Development",
+        "startTime": "14:00",
+        "endTime": "15:30"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Sarah Johnson",
+    "company": "Google",
+    "bio": "Sarah is a DevOps engineer and cloud architect specializing in Kubernetes and container orchestration. She's passionate about automation and infrastructure as code.",
+    "imageUrl": "https://via.placeholder.com/300x300/FFD700/000000?text=SJ",
+    "sessions": [
+      {
+        "id": 201,
+        "title": "Kubernetes Best Practices",
+        "description": "Master Kubernetes deployment strategies and best practices for production environments",
+        "track": "DevOps",
+        "startTime": "11:00",
+        "endTime": "12:30"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Michael Chen",
+    "company": "Amazon Web Services",
+    "bio": "Michael is a solutions architect at AWS with expertise in serverless architectures and distributed systems. He helps companies modernize their applications.",
+    "imageUrl": "https://via.placeholder.com/300x300/FFD700/000000?text=MC",
+    "sessions": [
+      {
+        "id": 301,
+        "title": "Serverless Architecture Patterns",
+        "description": "Explore modern serverless patterns using AWS Lambda and Azure Functions",
+        "track": "Cloud",
+        "startTime": "13:00",
+        "endTime": "14:30"
+      },
+      {
+        "id": 302,
+        "title": "Microservices at Scale",
+        "description": "Learn how to design and implement microservices that scale",
+        "track": "Architecture",
+        "startTime": "16:00",
+        "endTime": "17:30"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Emily Rodriguez",
+    "company": "IBM",
+    "bio": "Emily is an AI/ML engineer specializing in natural language processing and computer vision. She has published multiple papers on deep learning applications.",
+    "imageUrl": "https://via.placeholder.com/300x300/FFD700/000000?text=ER",
+    "sessions": [
+      {
+        "id": 401,
+        "title": "Introduction to Machine Learning",
+        "description": "Get started with machine learning using practical examples and real-world use cases",
+        "track": "AI/ML",
+        "startTime": "10:00",
+        "endTime": "11:30"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "David Park",
+    "company": "Meta",
+    "bio": "David is a frontend architect passionate about user experience and accessibility. He's a core contributor to several open-source UI frameworks.",
+    "imageUrl": "https://via.placeholder.com/300x300/FFD700/000000?text=DP",
+    "sessions": [
+      {
+        "id": 501,
+        "title": "Modern Frontend Development",
+        "description": "Explore the latest trends in frontend development including React, Vue, and Blazor",
+        "track": "Frontend",
+        "startTime": "09:30",
+        "endTime": "11:00"
+      },
+      {
+        "id": 502,
+        "title": "Accessibility in Web Applications",
+        "description": "Learn how to build accessible web applications that work for everyone",
+        "track": "Web Development",
+        "startTime": "15:00",
+        "endTime": "16:30"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Lisa Anderson",
+    "company": "Oracle",
+    "bio": "Lisa is a database architect with deep expertise in SQL, NoSQL, and distributed databases. She specializes in performance optimization and data modeling.",
+    "imageUrl": "https://via.placeholder.com/300x300/FFD700/000000?text=LA",
+    "sessions": [
+      {
+        "id": 601,
+        "title": "Database Performance Tuning",
+        "description": "Master the art of database optimization and performance tuning",
+        "track": "Database",
+        "startTime": "11:30",
+        "endTime": "13:00"
+      }
+    ]
+  }
+]
