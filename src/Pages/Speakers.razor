@@ -78,20 +78,25 @@
     {
         try
         {
-            // Try to fetch from API endpoint first
+            // Try to fetch from API endpoint first (as specified in requirements)
             speakers = await Http.GetFromJsonAsync<Speaker[]>("http://gerald.fyi/server-speaker");
         }
-        catch
+        catch (HttpRequestException)
         {
+            // API endpoint not accessible, fallback to local sample data for development
             try
             {
-                // Fallback to local sample data for development
                 speakers = await Http.GetFromJsonAsync<Speaker[]>("sample-data/speakers.json");
             }
             catch (Exception ex)
             {
                 error = $"Unable to load speakers: {ex.Message}";
             }
+        }
+        catch (Exception ex)
+        {
+            // Handle other exceptions (JSON parsing, etc.)
+            error = $"Error loading speakers: {ex.Message}";
         }
     }
 }
